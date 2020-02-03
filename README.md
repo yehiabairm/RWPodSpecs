@@ -59,6 +59,16 @@ Firstly, import `Speakol`.
 ```swift
 import Speakol
 ```
+Then, add initalizers to `AppDelegate` inside `didFinishLaunchingWithOptions` method to be like this
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  SpeakolManager.shared.speakolToken = "token_from_speakol_portal"
+  SpeakolManager.shared.widgetId = "widget_id"
+  SpeakolManager.shared.initializeSpeakolWithToken()
+  return true
+}
+```
 
 ### Initialization for UITableView
 
@@ -91,3 +101,5 @@ func speakolTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
   let cell = speakolTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
   return cell
 }
+```
+also if you want to add speakol ads to the top of your tableview set 
