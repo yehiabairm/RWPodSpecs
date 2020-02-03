@@ -22,13 +22,72 @@ See
 for instructions and options about overriding pod source locations.
 
 
-### CocoaPods
+## Installation
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+### Cocoapods
 
-```ruby
-pod 'SpeakolSDK', # not published yet 
+Install [Cocoapods](https://cocoapods.org/#install) if need be.
+
+```bash
+$ gem install cocoapods
 ```
 
+Add `Speakol-SDK` in your `Podfile`.
 
+```ruby
+use_frameworks!
 
+pod 'Speakol-SDK' # not published yet
+```
+Then, run the following command.
+
+```bash
+$ pod install
+```
+
+## Supported Views
+
+| View |
+|---|
+|1. UITableView | 
+|2. UICollectionView |
+
+## Usage
+
+Firstly, import `Speakol`.
+
+```swift
+import Speakol
+```
+
+### Initialization for UITableView
+
+- By storyboard, changing class of any `UITableView` to `SpeakolTableView`.
+
+_**Note:** Set Module to `Speakol`._
+
+### Configure SpeakolTableView
+
+- First you need to implement `SpeakolTableViewDelegate`, and `SpeakolTableViewDataSource` like this:
+
+```swift
+class ViewController: UIViewController, SpeakolTableViewDelegate, SpeakolTableViewDataSource
+```
+
+- then you need to set `speakolDelegate` and `speakolDataSource`
+
+```swift
+speakolTableView.speakolDelegate = self
+speakolTableView.speakolDataSource = self
+```
+- then implement this method like native tableView
+
+```swift
+func speakolTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  return number_of_your_items_want_to_be_displayed // not the speakol items will be inserted in another section this section is used for the publisher items only
+}
+func speakolTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  // here you will return the any tableview cell you want to dispaly
+  let cell = speakolTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+  return cell
+}
