@@ -139,7 +139,6 @@ func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSe
     
     func speakolCollectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionCellSize = collectionView.frame.size.width
-
         return CGSize(width: collectionCellSize/2, height: 100)
 }
 ```
