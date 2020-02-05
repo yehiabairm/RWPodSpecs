@@ -130,17 +130,17 @@ collectionView.speakolDelegateFlowLayout = self
 ```swift
 func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return number_of_your_items_want_to_be_displayed // not the speakol items will be inserted in another section this section is used for the publisher items only
-    }
+}
     
     func speakolCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCollectionViewCell", for: indexPath) as! UICollectionViewCell
         return cell
-    }
+}
     
     func speakolCollectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionCellSize = collectionView.frame.size.width
 
         return CGSize(width: collectionCellSize/2, height: 100)
-    }
+}
 ```
 also if you want to add speakol ads to the top of your `SpeakolCollectionView` set `SpeakolCollectionView.isTop = true`
