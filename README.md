@@ -1,9 +1,8 @@
 # Speakol iOS SDK
 
-This repository contains the Speakol iOS SDK source. It currently
-includes SpeakolTableView, SpeakolCollectionView.
+This repository contains the Speakol iOS SDK source.
 
-This guide is intended for publishers who want to use Speakol to monetize an iOS app that's built nativly.
+This guide is intended for publishers who want to use Speakol to monetize an iOS app that's built natively.
 
 ## Features
 
@@ -13,7 +12,7 @@ This guide is intended for publishers who want to use Speakol to monetize an iOS
 
 ## Requirements
 
-- iOS 10.0
+- iOS 11.0
 
 #### Background
 
@@ -51,6 +50,12 @@ $ pod install
 |---|
 |1. UITableView | 
 |2. UICollectionView |
+
+## Example
+
+- for achieving view like this
+
+<img src="https://github.com/yehiabairm/RWPodSpecs/raw/master/IMG_1272.PNG" width="250">
 
 ## Usage
 
@@ -142,21 +147,4 @@ func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSe
         return CGSize(width: collectionCellSize/2, height: 100)
 }
 ```
-also if you want to add speakol ads to the top of your `SpeakolCollectionView` set `SpeakolCollectionView.isTop = true`
 
-
-### Update an already existing view to display speakol within it like this screenshot
-<img src="https://github.com/yehiabairm/RWPodSpecs/raw/master/IMG_1272.PNG" width="250">
-
-- You have to create SpeakolTableView and add your view in UITableView cell then implement the delegate method to be like this
-```swift
-extension ViewController: SpeakolTableViewDelegate, SpeakolTableViewDataSource {
-  func speakolTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
-  }
-  func speakolTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = speakolTableView.dequeueReusableCell(withIdentifier: "your_view_cell", for: indexPath) as YOUR_VIEW_CELL
-    return cell
-  }
-}
-```
