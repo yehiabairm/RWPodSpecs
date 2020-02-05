@@ -109,7 +109,7 @@ func speakolTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
 ```
 also if you want to add speakol ads to the top of your `SpeakolTableView` set `SpeakolTableView.isTop = true`
 
-### Initialization for UICollectionView
+### And for the publishers who have already existing UICollectionView you can update it to:
 
 - By storyboard, changing class of any `UICollectionView` to `SpeakolCollectionView`.
 
