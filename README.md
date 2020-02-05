@@ -143,3 +143,20 @@ func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSe
 }
 ```
 also if you want to add speakol ads to the top of your `SpeakolCollectionView` set `SpeakolCollectionView.isTop = true`
+
+
+### Update an already existing view to display speakol within it like this screenshot
+<img src="https://github.com/yehiabairm/RWPodSpecs/raw/master/IMG_1272.PNG" width="250">
+
+- You have to create SpeakolTableView and add your view in UITableView cell then implement the delegate method to be like this
+```swift
+extension ViewController: SpeakolTableViewDelegate, SpeakolTableViewDataSource {
+  func speakolTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  func speakolTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = speakolTableView.dequeueReusableCell(withIdentifier: "your_view_cell", for: indexPath) as YOUR_VIEW_CELL
+    return cell
+  }
+}
+```
