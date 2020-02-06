@@ -1,10 +1,10 @@
 # Speakol iOS SDK
 
-##### This repository contains the [Speakol](https://speakol.com/en) iOS SDK source.
+This repository contains the [Speakol](https://speakol.com/en) iOS SDK source.
 
-##### [Speakol](https://speakol.com/en) provides endless scrolling of highly- personalized article recommendations, video-view inventory, featured content inventory and related inventory to each visitor on your website. Speakol’s technology seeks to understand visitors and place inventory of interest to them.
+Speakol provides endless scrolling of highly- personalized article recommendations, video-view inventory, featured content inventory and related inventory to each visitor on your website. Speakol’s technology seeks to understand visitors and place inventory of interest to them.
 
-##### This guide is intended for publishers who want to use [Speakol](https://speakol.com/en) to monetize an iOS app that's built natively.
+This guide is intended for publishers who want to use Speakol to monetize an iOS app that's built natively.
 
 ## Features
 
