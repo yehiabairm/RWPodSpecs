@@ -1,18 +1,20 @@
 # Speakol iOS SDK
 
-This repository contains the Speakol iOS SDK source.
+##### This repository contains the [Speakol](https://speakol.com/en) iOS SDK source.
 
-This guide is intended for publishers who want to use Speakol to monetize an iOS app that's built natively.
+##### [Speakol](https://speakol.com/en) provides endless scrolling of highly- personalized article recommendations, video-view inventory, featured content inventory and related inventory to each visitor on your website. Speakol’s technology seeks to understand visitors and place inventory of interest to them.
+
+##### This guide is intended for publishers who want to use [Speakol](https://speakol.com/en) to monetize an iOS app that's built natively.
 
 ## Features
 
-- [x] Insert speakol ads in UITableView
-- [x] Insert speakol ads in UICollectionView
-- [x] Support Image/Video Ads
+- [x] Insert speakol inventory in UITableView
+- [x] Insert speakol inventory in UICollectionView
+- [x] Support Image/Video inventory
 
-## Requirements
+## Prerequisite
 
-- iOS 11.0
+- iOS 11.0+
 
 #### Background
 
@@ -53,18 +55,18 @@ $ pod install
 
 ## Example
 
-- for achieving view like this
+Here is an example of enclosing Speakol Inventory in UITableView
 
 <img src="https://github.com/yehiabairm/RWPodSpecs/raw/master/IMG_1272.PNG" width="250">
 
 ## Usage
 
-Firstly, import `Speakol`.
+Firstly, import `Speakol SDK`.
 
 ```swift
 import Speakol
 ```
-Then, add initalizers to `AppDelegate` inside `didFinishLaunchingWithOptions` method to be like this
+#### Then, add `Speakol SDK` initializers to the `AppDelegate` enclosed in the `didFinishLaunchingWithOptions` method:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -75,9 +77,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
+- Don’t have the Widget Id? Please refer back to [Speakol publisher portal](http://publisher.speakol.com)
+
 ### Initialization for UITableView
 
-- By storyboard, changing class of any `UITableView` to `SpeakolTableView`.
+- In the storyboard, change the class of the designated `UITableView` to `SpeakolTableView`.
 
 _**Note:** Set Module to `Speakol`._
 
@@ -89,13 +93,13 @@ _**Note:** Set Module to `Speakol`._
 class ViewController: UIViewController, SpeakolTableViewDelegate, SpeakolTableViewDataSource
 ```
 
-- then you need to set `speakolDelegate`, and `speakolDataSource`
+- Then you need to set `speakolDelegate`, and `speakolDataSource`
 
 ```swift
 speakolTableView.speakolDelegate = self
 speakolTableView.speakolDataSource = self
 ```
-- then implement this method like native tableView
+- Use those two Speakol methods instead of the original ones.
 
 ```swift
 func speakolTableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,7 +111,7 @@ func speakolTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
   return cell
 }
 ```
-also if you want to add speakol ads to the top of your `SpeakolTableView` set `SpeakolTableView.isTop = true`
+Also if you want to add speakol inventory to the top of your `SpeakolTableView` set `SpeakolTableView.isTop = true`
 
 ### And for the publishers who have already existing UICollectionView you can update it to:
 
@@ -123,14 +127,14 @@ _**Note:** Set Module to `Speakol`._
 class ViewController: UIViewController, SpeakolCollectionViewDelegate, SpeakolCollectionViewDataSource, SpeakolCollectionViewDelegateFlowLayout
 ```
 
-- then you need to set `speakolDelegate`, `speakolDataSource`, and `speakolDelegateFlowLayout`
+- Then you need to set `speakolDelegate`, `speakolDataSource`, and `speakolDelegateFlowLayout`
 
 ```swift
 collectionView.speakolDelegate = self
 collectionView.speakolDataSource = self
 collectionView.speakolDelegateFlowLayout = self
 ```
-- then implement this method like native collectionView
+- Then implement this method like native collectionView
 
 ```swift
 func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -147,4 +151,4 @@ func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSe
         return CGSize(width: collectionCellSize/2, height: 100)
 }
 ```
-
+By then you can enjoy Speakol customized content. Please, refer back to [Speakol publisher portal](http://publisher.speakol.com) for more customization.
