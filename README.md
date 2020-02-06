@@ -66,7 +66,7 @@ Firstly, import `Speakol SDK`.
 ```swift
 import Speakol
 ```
-#### Then, add `Speakol SDK` initializers to the `AppDelegate` enclosed in the `didFinishLaunchingWithOptions` method:
+Then, add `Speakol SDK` initializers to the `AppDelegate` enclosed in the `didFinishLaunchingWithOptions` method:
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -77,7 +77,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-- Don’t have the Widget Id? Please refer back to [Speakol publisher portal](http://publisher.speakol.com)
+- Don’t have the Widget Id? Please refer back to [Speakol publisher portal](https://publishers.speakol.com/widgets)
 
 ### Initialization for UITableView
 
@@ -151,4 +151,4 @@ func speakolCollectionView(_ collectionView: UICollectionView, numberOfItemsInSe
         return CGSize(width: collectionCellSize/2, height: 100)
 }
 ```
-By then you can enjoy Speakol customized content. Please, refer back to [Speakol publisher portal](http://publisher.speakol.com) for more customization.
+By then you can enjoy Speakol customized content. Please, refer back to [Speakol publisher portal](https://publishers.speakol.com/widgets) for more customization.
